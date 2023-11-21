@@ -1,11 +1,6 @@
 // Program 11 : Implement Sparse Arrays
 
 #include <stdio.h>
-#define MAX_SIZE 10
-
-// Sparse Matrix
-
-#include <stdio.h>
 #define SIZE 10
 
 // Check for sparse matrix
@@ -45,7 +40,7 @@ void createSparseMatrix(int matrix[SIZE][SIZE], int row, int col, int nonZeroCou
         }
     }
 
-
+    // Printing the Sparse Matrix
     printf("\nSparse Matrix: \n");
     printf("%d\t%d\t%d\n", row, col, nonZeroCount);
 
