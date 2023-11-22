@@ -5,19 +5,19 @@
 
 // Check for sparse matrix
 int isSparseMatrix(int matrix[SIZE][SIZE], int row, int col){
-     int totalElements = row*col;
-    int sparseCount = 0;
+    int totalElements = row*col;
+    int nonZeroElements = 0;
 
     for(int i=0; i<row; i++){
         for(int j=0; j<col; j++){
             if(matrix[i][j] != 0){
-                sparseCount++;
+                nonZeroElements++;
             }
         }
     }
 
-    if(sparseCount <= totalElements/4){
-        return sparseCount;
+    if(nonZeroElements <= totalElements/4){
+        return nonZeroElements;
     }
     return 0;
 
@@ -40,7 +40,7 @@ void createSparseMatrix(int matrix[SIZE][SIZE], int row, int col, int nonZeroCou
         }
     }
 
-    // Printing the Sparse Matrix
+
     printf("\nSparse Matrix: \n");
     printf("%d\t%d\t%d\n", row, col, nonZeroCount);
 
@@ -80,11 +80,11 @@ int main(){
         }
     }
 
-    int sparseCount = isSparseMatrix(matrix, row, col);
+    int nonZeroElements = isSparseMatrix(matrix, row, col);
 
-    if(sparseCount > 0){
+    if(nonZeroElements > 0){
         printf("\nIt is a Sparse Matrix.\n");
-        createSparseMatrix(matrix, row, col, sparseCount);
+        createSparseMatrix(matrix, row, col, nonZeroElements);
     }
 
     else{
